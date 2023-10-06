@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500&family=Lora:ital,wght@1,500&family=Montserrat+Alternates:wght@900&family=Montserrat:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+
+    <style>
+      :root {
+        --font-text: "Hind Madurai", sans-serif;
+        --font-subHeading: "Lora", serif;
+        --font-heading: "Montserrat Alternates", sans-serif;
+
+        --size-7: 6rem;
+        --size-6: 5rem;
+        --size-5: 4rem;
+
+        --size-4: 2rem;
+        --size-3: 1.5rem;
+        --size-2: 1rem;
+        --size-1: 0.8rem;
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      body {
+        color: #323232;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-heading);
+        line-height: 1.1;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      h2 {
+        font-weight: 100;
+        font-size: 2.4rem;
+      }
+      h3 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-family: var(--font-text);
+      }
+
+      .container {
+        --max-width: 900px;
+
+        width: min(var(--max-width), 100% - 4rem);
+        margin: auto;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .flow > *:not(:last-child) {
+        margin-bottom: 1.2rem;
+      }
+
+      .mb-1 {
+        margin-bottom: var(--size-1);
+      }
+      .mb-2 {
+        margin-bottom: var(--size-2);
+      }
+      .mb-3 {
+        margin-bottom: var(--size-3);
+      }
+      .mb-4 {
+        margin-bottom: var(--size-4);
+      }
+
+      .pt-3 {
+        padding-top: var(--size-3);
+      }
+
+      .font-secondary {
+        font-family: var(--font-subHeading);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .btn {
+        padding: 0.6rem 0.8rem;
+        cursor: pointer;
+      }
+
+      .btn--solid {
+        border: 1px solide #323232;
+        background-color: #323232;
+        color: aliceblue;
+      }
+
+      .btn--outline {
+        border: none;
+        background: none;
+        outline: 1px solid #323232;
+
+        /*
+             */
+        margin-left: 0.8rem;
+      }
+
+      .hero__img-box {
+        position: relative;
+      }
+
+      header {
+        height: 4rem;
+        box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.09);
+      }
+
+      .py-5 {
+        padding-block: var(--size-4);
+      }
+      .py-5 {
+        padding-block: var(--size-5);
+      }
+
+      .py-6 {
+        padding-block: var(--size-6);
+      }
+      .py-7 {
+        padding-block: var(--size-7);
+      }
+
+      @media only screen and (min-width: 900px) {
+        :root {
+          --size-7: 7rem;
+          --size-6: 6rem;
+          --size-5: 5rem;
+          --size-4: 4rem;
+          --size-3: 3rem;
+          --size-2: 2rem;
+          --size-1: 1rem;
+        }
+
+        .flex {
+          display: flex;
+          align-items: center;
+        }
+
+        .flex > * {
+          width: 100%;
+        }
+
+        .flex > *:nth-child(2) {
+          margin-left: 2rem;
+        }
+
+        .hero__content {
+          text-align: left;
+        }
+
+        .left-arrow-heading {
+          width: 1.5rem;
+          left: -9%;
+          top: -9%;
+        }
+
+        .sticky {
+          position: sticky;
+          top: 25%;
+        }
+
+        .why-us {
+          border-top-right-radius: 4rem;
+          border-top-left-radius: 4rem;
+        }
+      }
+
+      /* Upscroller */
+      .sub-heading {
+        font-size: 0.8rem;
+        font-family: var(--font-heading);
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+      }
+
+      .upscroller {
+        display: none;
+        transform: translateY(10px);
+        transition: ease 0.5s;
+      }
+
+      .upscroller.active {
+        transform: translateY(0);
+        display: inline-block;
+
+        animation: fadeup 1s;
+      }
+
+      @keyframes fadeup {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .why-us {
+        height: 200svh;
+
+        color: rgb(230, 226, 226);
+        background-color: #323232;
+      }
+
+      .tab-content {
+        border-radius: 1rem;
+        padding: var(--size-4);
+        background-color: #327b50;
+        backdrop-filter: blur(4rem);
+      }
+
+      a:link,
+      a:visited {
+        font-family: var(--font-text);
+        letter-spacing: 1.2px;
+        text-decoration: none;
+        color: rgb(230, 226, 226);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>Header</div>
+    </header>
+    <main>
+      <section class="hero | py-5">
+        <div class="container">
+          <div class="flex">
+            <div class="hero__content | mb-4 text-center">
+              <div class="sub-heading | relative mb-2">
+                <span> Automated ⛳️ Global Employment Platform</span>
+                <div class="absolute | left-arrow-heading">
+                  <img src="left-arrow.svg" alt="Left arrow" />
+                </div>
+              </div>
+              <h1 class="mb-1">
+                <span class="upscroller">Care</span>
+                <span class="upscroller">Hire</span>
+                <span class="upscroller active">Pay</span>
+                <br />
+                <span class="font-secondary">talents in</span>
+
+                180 countries
+              </h1>
+              <p class="mb-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptas aut ratione, temporibus delectus distinctio corporis
+                culpa dolore natus modi atque rerum repellendus odit quasi
+                necessitatibus.
+              </p>
+              <div>
+                <button class="btn btn--solid">Explore for free</button>
+                <button class="btn btn--outline">Get a demo</button>
+              </div>
+            </div>
+
+            <div class="hero__img-box">
+              <div class="hero__img">
+                <img src="hero.avif" alt="" />
+                <!-- <div class="abs-1">
+                  <img src="abs-1.svg" alt="" />
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="why-us | py-7">
+        <div class="container">
+          <!-- Content -->
+          <div class="sticky | text-center">
+            <h2 class="mb-2">
+              What's possible with Oyster
+              <br />
+              <span class="font-secondary">All of this</span>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Dignissimos, nulla deserunt minus facilis sequi, odio quae qui
+              provident corrupti adipisci sapiente sit architecto commodi
+              beatae?
+            </p>
+          </div>
+          <!-- Tabs -->
+          <div class="py-5">
+            <div class="tab-content | flex">
+              <div class="flow mb-3">
+                <h3>Hire full-time international talent</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                  consequatur odio optio nobis exercitationem sequi? Error
+                  veniam fugiat cupiditate labore aliquam fugit beatae
+                  voluptatem accusamus!
+                </p>
+                <a href="#">Learn more &rarr;</a>
+              </div>
+              <div><img src="tab-1.avif" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      //
+      const scroller = document.querySelectorAll(".upscroller");
+      let index = 0;
+      const interval = setInterval(function () {
+        ++index;
+
+        scroller.forEach((item) => item.classList.remove("active"));
+
+        scroller[index - 1].classList.add("active");
+
+        if (index >= 3) index = 0;
+      }, 2000);
+
+      //
+
+      var x = window.matchMedia("(max-width: 700px)");
+
+      console.log(x.matches);
+
+      if (!x.matches) {
+        const sticky = document.querySelector(".sticky");
+        window.addEventListener("scroll", (e) => {
+          const heroOpas = this.scrollY / 1000;
+
+          if (heroOpas < 0) {
+            sticky.style.opacity = 1;
+          }
+          if (heroOpas > 0) {
+            sticky.style.opacity = `${1 - heroOpas}`;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
